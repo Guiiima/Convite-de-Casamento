@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Localização</title>
+</head>
+<body>
+
+    <button onclick="abrirMapa()">Abrir Localização</button>
+    <button onclick="abrirPix()">Abrir Pix</button>
+    <button onclick="enviarWhatsApp()">Enviar</button>
+    <script>
+        function abrirMapa() {
+            const url = `https://www.google.com.br/maps/place/Dom+Antonio/@-25.4036988,-49.3308448,18.75z/data=!4m6!3m5!1s0x94dce1a678aa36bb:0x183d853fa0866995!8m2!3d-25.4038142!4d-49.3310655!16s%2Fg%2F1ptvr8s_g?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D`;
+            window.open(url, '_blank');
+        }
+        function enviarWhatsApp() {
+            let url = `https://wa.me/${"4197008266"}?text=${encodeURIComponent("Envio essa mensagem como teste")}`;
+            window.open(url, '_blank');
+        }
+        function abrirPix() {
+            let url = `https://nubank.com.br/cobrar/1ndcmb/67a64249-00cd-464f-84a3-0e3158022e7d`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
