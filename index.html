@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Localização</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Convite de Casamento</title>
 </head>
+
 <body>
 
-    <button onclick="abrirMapa()">Abrir Localização</button>
-    <button onclick="abrirPix()">Abrir Pix</button>
-    <button onclick="enviarWhatsApp()">Enviar</button>
+    <div class="container">
+        <header>
+            <h1>Convite de Casamento</h1>
+            <p>É com muito carinho que convidamos você para o nosso grande dia! <br>Nosso casamento acontecerá em breve.
+                Confira as informações abaixo.</p>
+        </header>
+
+        <section class="icons">
+            <div class="icon" onclick="abrirMapa('comemoracao')">
+                <i class="fas fa-map-marked-alt"></i> <span>Localização Comemoração</span>
+            </div>
+            <div class="icon" onclick="abrirMapa('igreja')">
+                <i class="fas fa-church"></i> <span>Localização Igreja</span>
+            </div>
+            <div class="icon" onclick="abrirPix()">
+                <i class="fas fa-qrcode"></i> <span>Pix</span>
+            </div>
+            <div class="icon" onclick="enviarWhatsApp()">
+                <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+            </div>            
+        </section>
+    </div>
+
     <script>
-        function abrirMapa() {
-            const url = `https://www.google.com.br/maps/place/Dom+Antonio/@-25.4036988,-49.3308448,18.75z/data=!4m6!3m5!1s0x94dce1a678aa36bb:0x183d853fa0866995!8m2!3d-25.4038142!4d-49.3310655!16s%2Fg%2F1ptvr8s_g?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D`;
+        function abrirMapa(item) {
+            const url = item === 'comemoracao'
+                ? `https://www.google.com.br/maps/place/Dom+Antonio/@-25.4036988,-49.3308448,18.75z/data=!4m6!3m5!1s0x94dce1a678aa36bb:0x183d853fa0866995!8m2!3d-25.4038142!4d-49.3310655!16s%2Fg%2F1ptvr8s_g?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D`
+                : `https://www.google.com.br/maps/place/Par%C3%B3quia+Nossa+Senhora+da+Concei%C3%A7%C3%A3o/@-25.3965726,-49.3507206,17z/data=!3m1!4b1!4m6!3m5!1s0x94dce0351aead1ef:0x14a1180dbe0b83ff!8m2!3d-25.3965726!4d-49.3481457!16s%2Fg%2F1th6f_5f?entry=ttu&g_ep=EgoyMDI1MDIwNS4wIKXMDSoASAFQAw%3D%3D`;
             window.open(url, '_blank');
         }
+
+
         function enviarWhatsApp() {
             let url = `https://wa.me/${"4197008266"}?text=${encodeURIComponent("Envio essa mensagem como teste")}`;
             window.open(url, '_blank');
         }
+
         function abrirPix() {
             let url = `https://nubank.com.br/cobrar/1ndcmb/67a64249-00cd-464f-84a3-0e3158022e7d`;
             window.open(url, '_blank');
@@ -26,4 +55,5 @@
     </script>
 
 </body>
+
 </html>

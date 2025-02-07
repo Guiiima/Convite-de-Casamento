@@ -1,0 +1,96 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px; /* Para evitar cortes em telas menores */
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #6c4f97;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os ícones se ajustem em telas menores */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #000000;
+    width: 100px; /* Define um tamanho fixo para os ícones */
+    text-align: center;
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+}
+
+.icon span {
+    font-size: 1rem;
+    margin-top: 8px;
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.fas, .fab {
+    font-size: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .icons {
+        gap: 15px;
+    }
+
+    .icon {
+        width: 80px; /* Reduz o tamanho dos ícones */
+    }
+
+    .fas, .fab {
+        font-size: 1.8rem;
+    }
+
+    .icon span {
+        font-size: 0.9rem;
+    }
+}
